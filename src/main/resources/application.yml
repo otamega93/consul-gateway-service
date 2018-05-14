@@ -3,6 +3,6 @@
 zuul: 
   routes: 
     consul-service: 
-      path: /accounts/**
+      path: /consul/**
       serviceId: consul-service
       stripPrefix: false
