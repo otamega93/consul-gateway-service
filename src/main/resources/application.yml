@@ -1,0 +1,8 @@
+# Zuul routing
+# consul-service
+zuul: 
+  routes: 
+    consul-service: 
+      path: /accounts/**
+      serviceId: consul-service
+      stripPrefix: false

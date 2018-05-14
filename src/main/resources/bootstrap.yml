@@ -1,0 +1,29 @@
+server:
+  port: 4595
+spring:
+  application:
+    name: consul-gateway-service
+  cloud:
+#   bus:
+#     enabled: false
+    consul:
+      enabled: true
+      host: localhost
+      port: 8500
+      discovery:
+        fail-fast: false
+        enabled: true
+        register: true
+        instanceId: ${spring.application.name}
+      config:
+        enabled: true
+        fail-fast: false
+      retry:
+        max-attempts: 6
+        initial-interval: 4000
+management:
+  endpoints:
+    web:
+      exposure:
+         #include: "*"
+         include: refresh,health
